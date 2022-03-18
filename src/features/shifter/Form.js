@@ -13,6 +13,17 @@ export const Form = () => {
     dispatch(textInserted(initialState.text));
   }, []);
 
+  // keyboard shortcuts
+  window.addEventListener('keydown', (e) => {
+    if (e.altKey) {
+      if (e.key === 't') {
+        copy(shift.text);
+      } else if (e.key === 'b') {
+        copy(shift.binary);
+      }
+    }
+  });
+
   return (
     <div>
       <TextField />
@@ -23,12 +34,12 @@ export const Form = () => {
           text="Copy Text"
           keys="Alt + T"
           click={() => copy(shift.text)}
+          firstOrLast
         />
         <Button
           text="Copy Binary"
           keys="Alt + B"
           click={() => copy(shift.binary)}
-          firstOrLast
         />
       </div>
     </div>
