@@ -3,6 +3,7 @@ import { TextField } from './TextField';
 import { BinaryField } from './BinaryField';
 import { useDispatch, useSelector } from 'react-redux';
 import { textInserted, initialState } from './shifterSlice';
+import { Button } from '../../components/Button';
 
 export const Form = () => {
   const dispatch = useDispatch();
@@ -17,14 +18,24 @@ export const Form = () => {
       <TextField />
       <BinaryField />
 
-      <div>
-        <button
-          className="text-black font-bold border border-neutral-200 p-2 rounded bg-neutral-600"
-          onClick={() => navigator.clipboard.writeText(shift.binary)}
-        >
-          Copy <small className="font-semibold">(Ctrl + B)</small>
-        </button>
+      <div className="mt-2">
+        <Button
+          text="Copy Text"
+          keys="Alt + T"
+          click={() => copy(shift.text)}
+        />
+        <Button
+          text="Copy Binary"
+          keys="Alt + B"
+          click={() => copy(shift.binary)}
+          firstOrLast
+        />
       </div>
     </div>
   );
+};
+
+const copy = (content) => {
+  console.log('copy', content);
+  navigator.clipboard.writeText(content);
 };
