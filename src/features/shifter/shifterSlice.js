@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  text: 'Olá, React & Redux!',
+export const initialState = {
+  text: 'Olá Mundo.',
   binary: '',
 };
 
@@ -11,6 +11,14 @@ const shifterSlice = createSlice({
   reducers: {
     textInserted(state, action) {
       state.text = action.payload;
+
+      let binaryOutput = '';
+
+      for (var i = 0; i < action.payload.length; i++) {
+        binaryOutput += action.payload[i].charCodeAt(0).toString(2) + ' ';
+      }
+
+      state.binary = binaryOutput;
     },
 
     binaryInserted(state, action) {

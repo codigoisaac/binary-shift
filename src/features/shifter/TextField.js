@@ -1,26 +1,19 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { textInserted } from './shifterSlice';
+import { TextArea } from './Input';
 
 export const TextField = () => {
   const shift = useSelector((state) => state.shifter);
   const dispatch = useDispatch();
 
   const onTextInsert = (e) => {
-    dispatch(
-      textInserted({
-        text: e.target.value,
-      })
-    );
+    dispatch(textInserted(e.target.value));
   };
 
   return (
     <div>
-      <textarea
-        onChange={onTextInsert}
-        defaultValue={shift.text}
-        cols="80"
-      ></textarea>
+      <TextArea val={shift.text} onChange={onTextInsert} />
     </div>
   );
 };
