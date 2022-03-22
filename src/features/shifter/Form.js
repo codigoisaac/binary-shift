@@ -27,21 +27,26 @@ export const Form = () => {
   return (
     <div>
       <TextField />
-      <BinaryField />
 
-      <div className="mt-2">
-        <Button
-          text="Copy Text"
-          keys="Alt + Z"
-          click={() => copy(shift.text)}
-          firstOrLast
-        />
-        <Button
-          text="Copy Binary"
-          keys="Alt + X"
-          click={() => copy(shift.binary)}
-        />
+      <div className="flex items-center mb-1">
+        <div className="w-full">
+          <Button
+            text="Copy Text"
+            keys="Alt + Z"
+            click={() => copy(shift.text)}
+          />
+        </div>
+
+        <div className="w-full">
+          <Button
+            text="Copy Binary"
+            keys="Alt + X"
+            click={() => copy(shift.binary)}
+          />
+        </div>
       </div>
+
+      <BinaryField />
     </div>
   );
 };

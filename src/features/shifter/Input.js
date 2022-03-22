@@ -6,9 +6,8 @@ export const TextArea = ({ val, onChange }) => {
       <textarea
         onChange={onChange}
         defaultValue={val}
-        cols="80"
         rows="7"
-        className="py-2 px-3 my-3 rounded bg-black text-white"
+        className="py-2 px-3 m-0 rounded bg-black text-white w-full"
       ></textarea>
     </div>
   );

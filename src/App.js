@@ -5,7 +5,7 @@ import './index.css';
 function App() {
   return (
     <div className="flex justify-center min-h-screen items-center bg-neutral-900">
-      <div className="">
+      <div className="w-screen md:w-9/12 lg:w-5/12">
         <Form />
       </div>
     </div>

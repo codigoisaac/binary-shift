@@ -1,11 +1,9 @@
 import React from 'react';
 
-export const Button = ({ text, keys, click, firstOrLast }) => {
+export const Button = ({ text, keys, click }) => {
   return (
     <button
-      className={`text-black font-bold border border-neutral-200 p-2 rounded bg-neutral-600 ${
-        firstOrLast ? 'mx-0' : 'mx-2'
-      }`}
+      className={`text-neutral-700 font-bold border border-neutral-700 p-0 w-full hover:bg-neutral-300`}
       onClick={click}
     >
       {text} <small className="font-semibold">({keys})</small>
