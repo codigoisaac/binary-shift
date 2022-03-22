@@ -16,9 +16,9 @@ export const Form = () => {
   // keyboard shortcuts
   window.addEventListener('keydown', (e) => {
     if (e.altKey) {
-      if (e.key === 't') {
+      if (e.key === 'z') {
         copy(shift.text);
-      } else if (e.key === 'b') {
+      } else if (e.key === 'x') {
         copy(shift.binary);
       }
     }
@@ -32,13 +32,13 @@ export const Form = () => {
       <div className="mt-2">
         <Button
           text="Copy Text"
-          keys="Alt + T"
+          keys="Alt + Z"
           click={() => copy(shift.text)}
           firstOrLast
         />
         <Button
           text="Copy Binary"
-          keys="Alt + B"
+          keys="Alt + X"
           click={() => copy(shift.binary)}
         />
       </div>
