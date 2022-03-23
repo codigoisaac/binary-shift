@@ -15,7 +15,8 @@ const shifterSlice = createSlice({
       let binaryOutput = '';
 
       for (var i = 0; i < action.payload.length; i++) {
-        binaryOutput += action.payload[i].charCodeAt(0).toString(2) + ' ';
+        binaryOutput +=
+          action.payload[i].charCodeAt(0).toString(2).padStart(8, '0') + ' ';
       }
 
       state.binary = binaryOutput;
