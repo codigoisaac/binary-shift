@@ -4,7 +4,7 @@ export const TextArea = ({ val, onChange, type }) => {
   const handleKeyPress = (e) => {
     if (type === 'binary') {
       const key = e.key;
-      const regex = /[01]|\./;
+      const regex = /[01]/;
 
       if (!regex.test(key)) {
         e.preventDefault();
