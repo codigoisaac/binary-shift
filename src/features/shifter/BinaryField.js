@@ -8,16 +8,16 @@ export const BinaryField = () => {
   const dispatch = useDispatch();
 
   const onBinaryInsert = (e) => {
-    dispatch(
-      binaryInserted({
-        binary: e.target.value,
-      })
-    );
+    dispatch(binaryInserted(e.target.value));
+  };
+
+  const allow = (e) => {
+    return e.charCode === 96 || e.charCode === 97;
   };
 
   return (
     <div>
-      <TextArea val={shift.binary} onChange={onBinaryInsert} />
+      <TextArea val={shift.binary} onChange={onBinaryInsert} type="binary" />
     </div>
   );
 };
