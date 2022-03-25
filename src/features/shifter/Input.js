@@ -23,7 +23,7 @@ export const TextArea = ({ val, onChange, type }) => {
     <div>
       <textarea
         onChange={onChange}
-        defaultValue={val}
+        value={val}
         rows="7"
         className="py-2 px-3 m-0 rounded bg-black text-white w-full"
         onKeyPress={(e) => handleInput(e)}

@@ -24,6 +24,14 @@ const shifterSlice = createSlice({
 
     binaryInserted(state, action) {
       state.binary = action.payload;
+
+      var textOutput = '';
+
+      action.payload.split(' ').map(function (bin) {
+        textOutput += String.fromCharCode(parseInt(bin, 2));
+      });
+
+      state.text = textOutput;
     },
   },
 });
