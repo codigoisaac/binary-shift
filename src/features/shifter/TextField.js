@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { textInserted } from './shifterSlice';
-import { TextArea } from './Input';
+import { TextArea } from './TextArea';
 
 export const TextField = () => {
   const shift = useSelector((state) => state.shifter);

@@ -14,10 +14,10 @@ const shifterSlice = createSlice({
 
       let binaryOutput = '';
 
-      for (var i = 0; i < action.payload.length; i++) {
+      action.payload.split('').map((character) => {
         binaryOutput +=
-          action.payload[i].charCodeAt(0).toString(2).padStart(8, '0') + ' ';
-      }
+          character.charCodeAt(0).toString(2).padStart(8, '0') + ' ';
+      });
 
       state.binary = binaryOutput;
     },
@@ -27,8 +27,8 @@ const shifterSlice = createSlice({
 
       var textOutput = '';
 
-      action.payload.split(' ').map(function (bin) {
-        textOutput += String.fromCharCode(parseInt(bin, 2));
+      action.payload.split(' ').map((byte) => {
+        textOutput += String.fromCharCode(parseInt(byte, 2));
       });
 
       state.text = textOutput;

@@ -52,6 +52,5 @@ export const Form = () => {
 };
 
 const copy = (content) => {
-  console.log('copy', content);
   navigator.clipboard.writeText(content);
 };
