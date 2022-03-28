@@ -25,11 +25,23 @@ export const BinaryField = () => {
     e.target.value = joined.match(/.{1,8}/g).join(' ');
   };
 
+  const handlePaste = (e) => {
+    const val = e.target.value;
+    const filteredVal = val.split('').filter((char) => {
+      return /[01 ]/.test(char);
+    });
+    const joined = filteredVal.join('');
+
+    e.target.value = joined;
+
+    translate(e);
+  };
+
   return (
     <div>
       <TextArea
         val={shift.binary}
-        onChange={translate}
+        onChange={handlePaste}
         onKeyPress={filterKey}
         onKeyUp={handleSpaces}
       />
