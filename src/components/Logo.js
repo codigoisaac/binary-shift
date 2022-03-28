@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export const Logo = () => {
   const initialTitle = 'Binary Shift',
-    initialClass = 'text-3xl md:text-6xl';
+    initialClass = 'text-4xl md:text-6xl';
 
   const [display, setDisplay] = useState(initialTitle);
   const [logoClass, setClass] = useState(initialClass);
@@ -21,15 +21,18 @@ export const Logo = () => {
 
   return (
     <div
-      className="text-neutral-500 font-['Space_Grotesk'] p-3 w-1/2 mx-auto mb-12"
+      className="text-neutral-500 font-['Space_Grotesk'] p-3 w-full mx-auto mb-12 flex flex-col items-center"
       onMouseEnter={() => translateTo('binary')}
       onMouseLeave={() => translateTo('title')}
     >
-      <div className={`${logoClass} font-bold leading-[1.3rem] h-16`}>
-        {display}
-      </div>
       <div>
-        by <span className="hover:text-[#00f] cursor-pointer">codigoisaac</span>
+        <div className={`${logoClass} font-bold min-h-16 flex items-end`}>
+          {display}
+        </div>
+        <div>
+          by{' '}
+          <span className="hover:text-[#00f] cursor-pointer">codigoisaac</span>
+        </div>
       </div>
     </div>
   );
