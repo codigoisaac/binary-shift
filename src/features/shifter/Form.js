@@ -11,6 +11,7 @@ export const Form = () => {
 
   useEffect(() => {
     dispatch(translateToBinary(initialState.text));
+    //eslint-disable-next-line
   }, []);
 
   // keyboard shortcuts
