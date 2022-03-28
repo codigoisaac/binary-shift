@@ -20,12 +20,12 @@ export const Logo = () => {
   };
 
   return (
-    <div
-      className="text-neutral-500 font-['Space_Grotesk'] p-3 w-full mx-auto mb-12 flex flex-col items-center"
-      onMouseEnter={() => translateTo('binary')}
-      onMouseLeave={() => translateTo('title')}
-    >
-      <div>
+    <div className="text-neutral-500 font-['Space_Grotesk'] p-3 w-full mx-auto flex flex-col items-center">
+      <div
+        className="h-32"
+        onMouseEnter={() => translateTo('binary')}
+        onMouseLeave={() => translateTo('title')}
+      >
         <div className={`${logoClass} font-bold min-h-16 flex items-end`}>
           {display}
         </div>
