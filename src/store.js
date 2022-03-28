@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import shifterReducer from '../features/shifter/shifterSlice';
+import shifterReducer from './shifter/shifterSlice';
 
 export const store = configureStore({
   reducer: {

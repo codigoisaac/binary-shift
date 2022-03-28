@@ -3,7 +3,7 @@ import { TextField } from './TextField';
 import { BinaryField } from './BinaryField';
 import { useDispatch, useSelector } from 'react-redux';
 import { translateToBinary, initialState } from './shifterSlice';
-import { Button } from '../../components/Button';
+import { Button } from '../components/Button';
 
 export const Form = () => {
   const dispatch = useDispatch();

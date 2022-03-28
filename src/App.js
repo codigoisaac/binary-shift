@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from './features/shifter/Form';
+import { Form } from './shifter/Form';
 import './index.css';
 
 function App() {
