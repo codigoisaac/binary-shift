@@ -10,6 +10,7 @@ export const TextArea = ({ val, onChange, onKeyUp }) => {
         value={val}
         className="py-2 px-3 m-0 rounded bg-black text-white w-full"
         maxRows={13}
+        minRows={1}
       />
     </div>
   );
