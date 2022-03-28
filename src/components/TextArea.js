@@ -1,15 +1,16 @@
 import React from 'react';
+import TextareaAutosize from 'react-textarea-autosize';
 
 export const TextArea = ({ val, onChange, onKeyUp }) => {
   return (
     <div>
-      <textarea
+      <TextareaAutosize
         onChange={onChange}
         onKeyUp={onKeyUp}
         value={val}
-        rows="7"
         className="py-2 px-3 m-0 rounded bg-black text-white w-full"
-      ></textarea>
+        maxRows={13}
+      />
     </div>
   );
 };
