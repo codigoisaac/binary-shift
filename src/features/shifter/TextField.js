@@ -7,13 +7,13 @@ export const TextField = () => {
   const shift = useSelector((state) => state.shifter);
   const dispatch = useDispatch();
 
-  const onTextInsert = (e) => {
+  const translate = (e) => {
     dispatch(translateToBinary(e.target.value));
   };
 
   return (
     <div>
-      <TextArea val={shift.text} onChange={onTextInsert} />
+      <TextArea val={shift.text} onChange={translate} />
     </div>
   );
 };
