@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { textInserted } from './shifterSlice';
+import { translateToBinary } from './shifterSlice';
 import { TextArea } from './TextArea';
 
 export const TextField = () => {
@@ -8,7 +8,7 @@ export const TextField = () => {
   const dispatch = useDispatch();
 
   const onTextInsert = (e) => {
-    dispatch(textInserted(e.target.value));
+    dispatch(translateToBinary(e.target.value));
   };
 
   return (

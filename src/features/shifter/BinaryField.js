@@ -1,17 +1,17 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { binaryInserted } from './shifterSlice';
+import { translateToText } from './shifterSlice';
 import { TextArea } from './TextArea';
 
 export const BinaryField = () => {
   const shift = useSelector((state) => state.shifter);
   const dispatch = useDispatch();
 
-  const onBinaryInsert = (e) => {
-    dispatch(binaryInserted(e.target.value));
+  const translate = (e) => {
+    dispatch(translateToText(e.target.value));
   };
 
-  const filterInput = (e) => {
+  const filterKey = (e) => {
     const key = e.key;
     const regex = /[01]/;
 
@@ -29,8 +29,8 @@ export const BinaryField = () => {
     <div>
       <TextArea
         val={shift.binary}
-        onChange={onBinaryInsert}
-        onKeyPress={filterInput}
+        onChange={translate}
+        onKeyPress={filterKey}
         onKeyUp={handleSpaces}
       />
     </div>

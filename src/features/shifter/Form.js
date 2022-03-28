@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { TextField } from './TextField';
 import { BinaryField } from './BinaryField';
 import { useDispatch, useSelector } from 'react-redux';
-import { textInserted, initialState } from './shifterSlice';
+import { translateToBinary, initialState } from './shifterSlice';
 import { Button } from '../../components/Button';
 
 export const Form = () => {
@@ -10,7 +10,7 @@ export const Form = () => {
   const shift = useSelector((state) => state.shifter);
 
   useEffect(() => {
-    dispatch(textInserted(initialState.text));
+    dispatch(translateToBinary(initialState.text));
   }, []);
 
   // keyboard shortcuts

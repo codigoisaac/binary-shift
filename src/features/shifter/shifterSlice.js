@@ -9,7 +9,7 @@ const shifterSlice = createSlice({
   name: 'shifter',
   initialState,
   reducers: {
-    textInserted(state, action) {
+    translateToBinary(state, action) {
       state.text = action.payload;
 
       let binaryOutput = '';
@@ -22,7 +22,7 @@ const shifterSlice = createSlice({
       state.binary = binaryOutput;
     },
 
-    binaryInserted(state, action) {
+    translateToText(state, action) {
       state.binary = action.payload;
 
       var textOutput = '';
@@ -36,6 +36,6 @@ const shifterSlice = createSlice({
   },
 });
 
-export const { textInserted, binaryInserted } = shifterSlice.actions;
+export const { translateToBinary, translateToText } = shifterSlice.actions;
 
 export default shifterSlice.reducer;
