@@ -1,5 +1,5 @@
 import React from 'react';
-import TextareaAutosize from 'react-textarea-autosize';
+import TextareaAutosize from 'react-autosize-textarea';
 
 export const TextArea = ({ val, onChange, onKeyUp }) => {
   return (
