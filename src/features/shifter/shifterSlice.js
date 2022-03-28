@@ -17,6 +17,7 @@ const shifterSlice = createSlice({
       action.payload.split('').map((character) => {
         binaryOutput +=
           character.charCodeAt(0).toString(2).padStart(8, '0') + ' ';
+        return '';
       });
 
       state.binary = binaryOutput;
@@ -29,6 +30,7 @@ const shifterSlice = createSlice({
 
       action.payload.split(' ').map((byte) => {
         textOutput += String.fromCharCode(parseInt(byte, 2));
+        return '';
       });
 
       state.text = textOutput;
