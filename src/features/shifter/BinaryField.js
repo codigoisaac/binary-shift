@@ -22,7 +22,7 @@ export const BinaryField = () => {
     translate(e);
   };
 
-  const handlePaste = (e) => {
+  const handleInput = (e) => {
     const val = e.target.value;
 
     const filteredVal = val.split('').filter((char) => {
@@ -39,7 +39,7 @@ export const BinaryField = () => {
     <div>
       <TextArea
         val={shift.binary}
-        onChange={handlePaste}
+        onChange={handleInput}
         onKeyUp={handleSpaces}
       />
     </div>
