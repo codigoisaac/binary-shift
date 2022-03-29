@@ -15,31 +15,32 @@ export const Logo = () => {
       setClass(initialClass);
     } else {
       setDisplay(initialBinary);
-      setClass('text-lg');
+      setClass('text-sm md:text-lg');
     }
   };
 
   return (
-    <div className="text-neutral-500 font-['Space_Grotesk'] p-3 w-full mx-auto flex flex-col items-center">
+    <div className="text-neutral-500 font-['Space_Grotesk'] p-3 w-full mx-auto flex flex-col items-center mb-10">
       <div
-        className="h-32"
+        className="h-16 flex items-end"
         onMouseEnter={() => translateTo('binary')}
         onMouseLeave={() => translateTo('title')}
       >
         <div className={`${logoClass} font-bold min-h-16 flex items-end`}>
           {display}
         </div>
-        <div>
-          by{' '}
-          <a
-            href="https://campsite.bio/codigoisaac"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-[#00f] cursor-pointer"
-          >
-            codigoisaac
-          </a>
-        </div>
+      </div>
+
+      <div className="mt-3">
+        by{' '}
+        <a
+          href="https://campsite.bio/codigoisaac"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-[#00f] cursor-pointer"
+        >
+          codigoisaac
+        </a>
       </div>
     </div>
   );
