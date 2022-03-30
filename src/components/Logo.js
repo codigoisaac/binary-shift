@@ -15,10 +15,10 @@ export const Logo = () => {
   const [logoClass, setClass] = useState(initialClass);
 
   const translateTo = (type) => {
-    if (type === 'title') {
+    if (type === 'title' && !isMobile) {
       setDisplay(initialTitle);
       setClass(initialClass);
-    } else if (type === 'binary') {
+    } else if (type === 'binary' && !isMobile) {
       setDisplay(initialBinary);
       setClass(alteredClass);
     } else if (type === 'reverse' && isMobile) {
