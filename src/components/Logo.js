@@ -4,7 +4,12 @@ export const Logo = () => {
   const initialTitle = 'Binary Shift',
     initialBinary =
       '01000010 01101001 01101110 01100001 01110010 01111001 00100000 01010011 01101000 01101001 01100110 01110100',
-    initialClass = 'text-4xl md:text-6xl';
+    initialClass = 'text-4xl md:text-6xl',
+    alteredClass = 'text-sm md:text-lg',
+    isMobile =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
 
   const [display, setDisplay] = useState(initialTitle);
   const [logoClass, setClass] = useState(initialClass);
@@ -13,9 +18,12 @@ export const Logo = () => {
     if (type === 'title') {
       setDisplay(initialTitle);
       setClass(initialClass);
-    } else {
+    } else if (type === 'binary') {
       setDisplay(initialBinary);
-      setClass('text-sm md:text-lg');
+      setClass(alteredClass);
+    } else if (type === 'reverse' && isMobile) {
+      setDisplay(display === initialTitle ? initialBinary : initialTitle);
+      setClass(logoClass === initialClass ? alteredClass : initialClass);
     }
   };
 
@@ -25,6 +33,7 @@ export const Logo = () => {
         className="h-16 flex items-end"
         onMouseEnter={() => translateTo('binary')}
         onMouseLeave={() => translateTo('title')}
+        onClick={() => translateTo('reverse')}
       >
         <div className={`${logoClass} font-bold min-h-16 flex items-end`}>
           {display}
