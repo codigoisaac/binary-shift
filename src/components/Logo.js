@@ -43,12 +43,12 @@ export const Logo = () => {
       <div className="mt-3">
         by{' '}
         <a
-          href="https://campsite.bio/codigoisaac"
+          href="https://isaacmuniz.vercel.app"
           target="_blank"
           rel="noreferrer"
           className="hover:text-[#00f] cursor-pointer"
         >
-          codigoisaac
+          isaac
         </a>
       </div>
     </div>
