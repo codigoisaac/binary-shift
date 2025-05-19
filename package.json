@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "author": "Isaac Muniz",
+  "license": "GPL-3.0",
   "homepage": "https://binaryshift.netlify.app",
   "repository": {
     "type": "git",
